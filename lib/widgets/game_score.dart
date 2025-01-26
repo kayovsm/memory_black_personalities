@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:memory_black_personalities/constantes.dart';
-import 'package:memory_black_personalities/view_models/game_view_model.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+import 'package:memory_black_personalities/models/constantes.dart';
+import 'package:memory_black_personalities/views/tela_inicial.dart';
+
+import '../view_models/game_view_model.dart';
 
 class GameScore extends StatelessWidget {
   final Modo modo;
@@ -13,7 +15,7 @@ class GameScore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<GameViewModel>(context);
+    final GameController controller = Get.find();
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,14 +27,14 @@ class GameScore extends StatelessWidget {
                 ? Icons.my_location
                 : Icons.touch_app_rounded),
             const SizedBox(width: 10),
-            Text(
-              controller.score.toString(),
+            Obx(() => Text(
+              '${controller.remainingTime.value}s',
               style: const TextStyle(fontSize: 25),
-            ),
+            )),
           ],
         ),
         Image.asset(
-          'imagens/logo.jpeg',
+          'assets/img/logo.jpeg',
           width: 38,
           height: 38,
         ),
@@ -41,7 +43,7 @@ class GameScore extends StatelessWidget {
             'Sair',
             style: TextStyle(fontSize: 18),
           ),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Get.offAll(const TelaInicial()),
         ),
       ],
     );

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get/get.dart';
 import 'package:memory_black_personalities/models/config_jogo.dart';
-import 'package:memory_black_personalities/constantes.dart';
+import 'package:memory_black_personalities/models/constantes.dart';
 import 'package:memory_black_personalities/models/game_play.dart';
 import 'package:memory_black_personalities/models/opcao_jogo.dart';
-import 'package:memory_black_personalities/view_models/game_view_model.dart';
 import 'package:memory_black_personalities/widgets/card_game.dart';
 import 'package:memory_black_personalities/widgets/feedback_game.dart';
 import 'package:memory_black_personalities/widgets/game_score.dart';
-import 'package:provider/provider.dart';
+
+import '../view_models/game_view_model.dart';
+import '../widgets/botao.dart';
 
 class GamePage extends StatelessWidget {
   final GamePlay gamePlay;
@@ -20,7 +21,10 @@ class GamePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<GameViewModel>(context);
+    final GameController controller = Get.put(GameController());
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.startGame(gamePlay: gamePlay);
+    });
 
     return Scaffold(
       appBar: AppBar(
@@ -28,12 +32,13 @@ class GamePage extends StatelessWidget {
         centerTitle: true,
         title: GameScore(modo: gamePlay.modo),
       ),
-      body: Observer(
-        builder: (_) {
-          if (controller.venceu) {
-            return const FeedbackGame(resultado: Resultado.aprovado);
-          } else if (controller.perdeu) {
-            return const FeedbackGame(resultado: Resultado.eliminado);
+      body: Obx(
+        () {
+          if (controller.venceu.value || controller.perdeu.value) {
+            print("Exibindo tela de feedback");
+            return FeedbackGame(
+              resultado: controller.venceu.value ? Resultado.aprovado : Resultado.eliminado,
+            );
           } else {
             return Center(
               child: GridView.count(

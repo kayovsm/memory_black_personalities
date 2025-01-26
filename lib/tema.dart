@@ -22,7 +22,7 @@ class TemaJogo {
 
   static ButtonStyle estiloBotao({
     Color color = Colors.white,
-    double padding = 24,
+    double padding = 16,
   }) {
     return OutlinedButton.styleFrom(
       foregroundColor: color, 

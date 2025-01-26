@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:memory_black_personalities/models/config_jogo.dart';
-import 'package:memory_black_personalities/constantes.dart';
+import 'package:memory_black_personalities/models/constantes.dart';
 import 'package:memory_black_personalities/models/game_play.dart';
 import 'package:memory_black_personalities/widgets/nivel_jogo.dart';
 //import 'package:jogo_da_memoria/constants.dart';

@@ -1,11 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:memory_black_personalities/constantes.dart';
+import 'package:get/get.dart';
+import 'package:memory_black_personalities/models/constantes.dart';
 import 'package:memory_black_personalities/models/opcao_jogo.dart';
 import 'package:memory_black_personalities/tema.dart';
-import 'package:memory_black_personalities/view_models/game_view_model.dart';
-import 'package:provider/provider.dart';
+
+import '../view_models/game_view_model.dart';
 
 class CardGame extends StatefulWidget {
   final Modo modo;
@@ -42,16 +43,16 @@ class _CardGameState extends State<CardGame>
 
   AssetImage getImage(double angulo) {
     if (angulo > 0.5 * pi) {
-      return AssetImage('imagens/${widget.opcaoJogo.opcao.toString()}.jpeg');
+      return AssetImage('assets/img/${widget.opcaoJogo.opcao.toString()}.jpeg');
     } else {
       return widget.modo == Modo.normal
-          ? const AssetImage('imagens/card_normal.jpeg')
-          : const AssetImage('imagens/card_dificil.jpeg');
+          ? const AssetImage('assets/img/card_normal.jpeg')
+          : const AssetImage('assets/img/card_dificil.jpeg');
     }
   }
 
   flipCard() {
-    final game = context.read<GameViewModel>();
+    final game = Get.find<GameController>();
 
     if (!animacaoCard.isAnimating &&
         !widget.opcaoJogo.cardIgual &&

@@ -1,4 +1,4 @@
-import 'package:memory_black_personalities/constantes.dart';
+import 'package:memory_black_personalities/models/constantes.dart';
 
 class GamePlay {
   Modo modo;

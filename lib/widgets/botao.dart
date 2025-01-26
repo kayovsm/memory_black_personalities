@@ -19,14 +19,11 @@ class BotaoIniciar extends StatelessWidget {
       child: OutlinedButton(
         style: TemaJogo.estiloBotao(color: color),
         onPressed: () => acaoClique(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              titulo,
-              style: const TextStyle(fontSize: 20),
-            )
-          ],
+        child: Center(
+          child: Text(
+            titulo,
+            style: const TextStyle(fontSize: 20),
+          ),
         ),
       ),
     );

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:memory_black_personalities/constantes.dart';
+import 'package:get/get.dart';
+import 'package:memory_black_personalities/models/constantes.dart';
 import 'package:memory_black_personalities/models/game_play.dart';
 import 'package:memory_black_personalities/tema.dart';
-import 'package:memory_black_personalities/view_models/game_view_model.dart';
 import 'package:memory_black_personalities/views/game_page.dart';
-import 'package:provider/provider.dart';
+
+import '../view_models/game_view_model.dart';
 
 class NivelJogo extends StatelessWidget {
   final GamePlay gamePlay;
@@ -14,22 +15,16 @@ class NivelJogo extends StatelessWidget {
     required this.gamePlay,
   });
 
-  startGame(BuildContext context) {
-    context.read<GameViewModel>().startGame(gamePlay: gamePlay);
-
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        fullscreenDialog: true,
-        builder: (BuildContext context) => GamePage(gamePlay: gamePlay),
-      ),
-    );
+  void startGame() {
+    final GameController controller = Get.put(GameController());
+    controller.startGame(gamePlay: gamePlay);
+    Get.to(() => GamePage(gamePlay: gamePlay));
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => startGame(context),
+      onTap: startGame,
       borderRadius: const BorderRadius.all(Radius.circular(10)),
       child: Container(
         width: 90,

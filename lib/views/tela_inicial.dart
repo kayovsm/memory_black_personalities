@@ -3,8 +3,8 @@ import 'package:memory_black_personalities/views/modo_jogo.dart';
 import 'package:memory_black_personalities/tema.dart';
 import 'package:memory_black_personalities/widgets/botao.dart';
 import 'package:memory_black_personalities/widgets/logo.dart';
-import 'package:memory_black_personalities/widgets/nivel_jogo.dart';
-import 'package:memory_black_personalities/constantes.dart';
+import 'package:memory_black_personalities/models/constantes.dart';
+import 'package:memory_black_personalities/views/todas_figuras.dart';
 
 class TelaInicial extends StatelessWidget {
   const TelaInicial({super.key});
@@ -13,14 +13,14 @@ class TelaInicial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Logo(),
             BotaoIniciar(
-              titulo: 'Modo Normal',
+              titulo: 'Iniciar Jogo',
               color: Colors.white,
               acaoClique: () => Navigator.push(
                 context,
@@ -31,13 +31,12 @@ class TelaInicial extends StatelessWidget {
               ),
             ),
             BotaoIniciar(
-              titulo: 'Modo Dificil',
+              titulo: 'História das Figuras',
               color: TemaJogo.color,
               acaoClique: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                      const ModoJogo(modo: Modo.dificil),
+                  builder: (BuildContext context) => const TodasFiguras(),
                 ),
               ),
             ),

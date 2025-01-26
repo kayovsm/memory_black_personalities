@@ -1,16 +1,19 @@
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:memory_black_personalities/models/config_jogo.dart';
-import 'package:memory_black_personalities/constantes.dart';
 import 'package:memory_black_personalities/models/game_play.dart';
 import 'package:memory_black_personalities/models/opcao_jogo.dart';
+import 'dart:async';
 
-class GameViewModel extends ChangeNotifier {
-  List<OpcaoJogo> gameCard = [];
-  int score = 0;
-  bool venceu = false;
-  bool perdeu = false;
+class GameController extends GetxController {
+  var gameCard = <OpcaoJogo>[].obs;
+  var score = 0.obs;
+  var venceu = false.obs;
+  var perdeu = false.obs;
+  var remainingTime = 60.obs;
+  Timer? _timer;
+  var figurasAcertadas = <OpcaoJogo>[].obs;
 
-  late GamePlay _gamePlay;
+  late GamePlay gamePlay;
   List<OpcaoJogo> _cartaEscolhida = [];
   List<Function> _escolhaIgual = [];
   int _acertos = 0;
@@ -19,30 +22,35 @@ class GameViewModel extends ChangeNotifier {
   bool get jogadaCompleta => (_cartaEscolhida.length == 2);
 
   void startGame({required GamePlay gamePlay}) {
-    _gamePlay = gamePlay;
+    this.gamePlay = gamePlay;
     _acertos = 0;
-    _numPares = (_gamePlay.nivel / 2).round();
-    venceu = false;
-    perdeu = false;
+    _numPares = (gamePlay.nivel / 2).round();
+    venceu.value = false;
+    perdeu.value = false;
+    remainingTime.value = 60;
+    figurasAcertadas.clear();
 
     _resetScore();
     _gerarCard();
-    notifyListeners();
+    _startTimer();
   }
 
   void _resetScore() {
-    _gamePlay.modo == Modo.normal ? score = 0 : score = _gamePlay.nivel;
+    score.value = 0;
   }
 
   void _gerarCard() {
-    List<int> cardOpocoes = ConfigJogo.cardOpcoes.sublist(0)..shuffle();
+    int maxOpcoes = ConfigJogo.figuras.length;
+    List<int> cardOpocoes = ConfigJogo.cardOpcoes.sublist(0, maxOpcoes)
+      ..shuffle();
     cardOpocoes = cardOpocoes.sublist(0, _numPares);
-    gameCard = [...cardOpocoes, ...cardOpocoes]
-        .map((opcao) =>
-            OpcaoJogo(opcao: opcao, cardIgual: false, selecionado: false))
-        .toList();
+
+    gameCard.value = [...cardOpocoes, ...cardOpocoes].map((opcao) {
+      final figura = ConfigJogo.figuras[opcao - 1];
+      return OpcaoJogo(
+          opcao: opcao, cardIgual: false, selecionado: false, figura: figura);
+    }).toList();
     gameCard.shuffle();
-    notifyListeners();
   }
 
   void escolher(OpcaoJogo opcao, Function resetCard) async {
@@ -59,6 +67,8 @@ class GameViewModel extends ChangeNotifier {
         _acertos++;
         _cartaEscolhida[0].cardIgual = true;
         _cartaEscolhida[1].cardIgual = true;
+        figurasAcertadas.add(_cartaEscolhida[0]);
+        _addTime(5); // Adiciona 5 segundos ao cronômetro
       } else {
         await Future.delayed(const Duration(seconds: 1), () {
           for (var i in [0, 1]) {
@@ -70,43 +80,16 @@ class GameViewModel extends ChangeNotifier {
       _resetJogada();
       _updateScore();
       _checarResultado();
-      notifyListeners();
     }
   }
 
   Future<void> _checarResultado() async {
     bool allMatched = _acertos == _numPares;
-    if (_gamePlay.modo == Modo.normal) {
-      await _checarResultadoNormal(allMatched);
-    } else {
-      await _checarResultadoDificil(allMatched);
+    if (allMatched) {
+      venceu.value = true;
+      _stopTimer();
+      print("Jogo vencido!");
     }
-  }
-
-  Future<void> _checarResultadoNormal(bool allMatched) async {
-    await Future.delayed(const Duration(seconds: 1), () {
-      venceu = allMatched;
-      notifyListeners();
-    });
-  }
-
-  Future<void> _checarResultadoDificil(bool allMatched) async {
-    if (_chancesAcabaram()) {
-      await Future.delayed(const Duration(seconds: 1), () {
-        perdeu = true;
-        notifyListeners();
-      });
-    }
-    if (allMatched && score >= 0) {
-      await Future.delayed(const Duration(seconds: 1), () {
-        venceu = allMatched;
-        notifyListeners();
-      });
-    }
-  }
-
-  bool _chancesAcabaram() {
-    return score < _numPares - _acertos;
   }
 
   void _resetJogada() {
@@ -115,22 +98,42 @@ class GameViewModel extends ChangeNotifier {
   }
 
   void _updateScore() {
-    _gamePlay.modo == Modo.normal ? score++ : score--;
-    notifyListeners();
+    score.value++;
+  }
+
+  void _startTimer() {
+    _timer?.cancel();
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (remainingTime.value > 0) {
+        remainingTime.value--;
+      } else {
+        perdeu.value = true;
+        _stopTimer();
+        print("Tempo esgotado! Jogo perdido!");
+      }
+    });
+  }
+
+  void _stopTimer() {
+    _timer?.cancel();
+  }
+
+  void _addTime(int seconds) {
+    remainingTime.value += seconds;
   }
 
   void reiniciarJogo() {
-    startGame(gamePlay: _gamePlay);
+    startGame(gamePlay: gamePlay);
   }
 
   void proximoNivel() {
     int nivelIndex = 0;
 
-    if (_gamePlay.nivel != ConfigJogo.niveis.last) {
-      nivelIndex = ConfigJogo.niveis.indexOf(_gamePlay.nivel) + 1;
+    if (gamePlay.nivel != ConfigJogo.niveis.last) {
+      nivelIndex = ConfigJogo.niveis.indexOf(gamePlay.nivel) + 1;
     }
 
-    _gamePlay.nivel = ConfigJogo.niveis[nivelIndex];
-    startGame(gamePlay: _gamePlay);
+    gamePlay.nivel = ConfigJogo.niveis[nivelIndex];
+    startGame(gamePlay: gamePlay);
   }
 }
