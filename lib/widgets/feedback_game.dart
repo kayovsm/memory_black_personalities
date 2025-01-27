@@ -44,10 +44,15 @@ class FeedbackGame extends StatelessWidget {
                         scale: 0.5,
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Curiosidade sobre a figura',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                    const SizedBox(height: 10),
                     Text(
-                      'Curiosidade sobre a figura ${randomFigura.figura.titulo}',
-                      style: const TextStyle(fontSize: 18),
+                      randomFigura.figura.titulo,
+                      style: const TextStyle(fontSize: 23),
                     ),
                     const SizedBox(height: 8),
                     Text(
@@ -77,7 +82,6 @@ class FeedbackGame extends StatelessWidget {
                           gamePlay: Get.find<GameController>().gamePlay));
                     },
                   ),
-                  
           ],
         ),
       ),

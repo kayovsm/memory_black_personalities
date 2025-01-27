@@ -1,29 +1,128 @@
 [
   {
     "imagePath": "assets/img/1.jpeg",
-    "titulo": "Figura 1 Figura 1 Figura 1 Figura 1",
-    "historia": "### Receita de Bolo de Chocolate Fofinho 🍫\n\n#### **Ingredientes**\n##### Para o bolo:\n- 2 xícaras (chá) de farinha de trigo peneirada\n- 1 xícara (chá) de açúcar\n- 1 xícara (chá) de chocolate em pó (não confundir com achocolatado)\n- 1 colher (sopa) de fermento em pó\n- 1 colher (chá) de bicarbonato de sódio (opcional, para maior maciez)\n- 1/2 colher (chá) de sal\n- 3 ovos\n- 1 xícara (chá) de leite\n- 1/2 xícara (chá) de óleo vegetal\n- 1 colher (chá) de essência de baunilha\n- 1/2 xícara (chá) de água quente\n\n##### Para a cobertura:\n- 1 lata de leite condensado\n- 1 colher (sopa) de manteiga\n- 4 colheres (sopa) de chocolate em pó\n- 1/2 caixinha de creme de leite (opcional, para deixar a cobertura mais cremosa)\n\n---\n\n#### **Modo de Preparo**\n##### Para o bolo:\n1. **Pré-aqueça o forno:** Aqueça o forno a 180°C e unte uma forma redonda média (ou retangular) com manteiga e polvilhe com farinha de trigo.\n2. **Misture os secos:** Em uma tigela grande, peneire a farinha de trigo, o açúcar, o chocolate em pó, o fermento, o bicarbonato (se estiver usando) e o sal. Misture bem.\n3. **Adicione os líquidos:** Em outra tigela, bata os ovos, o leite, o óleo e a essência de baunilha até ficar homogêneo.",
+    "titulo": "Zumbi dos Palmares",
+    "historia": "Zumbi foi o líder do Quilombo dos Palmares, um dos maiores símbolos da resistência negra contra a escravidão no Brasil. Ele nasceu em 1655 e desde jovem lutou pela liberdade de seu povo.",
     "curiosidades": [
-      "O bolo de chocolate é uma das sobremesas mais populares do mundo.",
-      "O primeiro bolo de chocolate foi criado em 1764."
+      "Zumbi é celebrado no Dia da Consciência Negra, em 20 de novembro.",
+      "Palmares era um dos maiores quilombos do período colonial."
     ]
   },
   {
     "imagePath": "assets/img/2.jpeg",
-    "titulo": "Figura 2",
-    "historia": "### Receita de Bolo de Chocolate Fofinho 🍫\n\n#### **Ingredientes**\n##### Para o bolo:\n- 2 xícaras (chá) de farinha de trigo peneirada\n- 1 xícara (chá) de açúcar\n- 1 xícara (chá) de chocolate em pó (não confundir com achocolatado)\n- 1 colher (sopa) de fermento em pó\n- 1 colher (chá) de bicarbonato de sódio (opcional, para maior maciez)\n- 1/2 colher (chá) de sal\n- 3 ovos\n- 1 xícara (chá) de leite\n- 1/2 xícara (chá) de óleo vegetal\n- 1 colher (chá) de essência de baunilha\n- 1/2 xícara (chá) de água quente\n\n##### Para a cobertura:\n- 1 lata de leite condensado\n- 1 colher (sopa) de manteiga\n- 4 colheres (sopa) de chocolate em pó\n- 1/2 caixinha de creme de leite (opcional, para deixar a cobertura mais cremosa)\n\n---\n\n#### **Modo de Preparo**\n##### Para o bolo:\n1. **Pré-aqueça o forno:** Aqueça o forno a 180°C e unte uma forma redonda média (ou retangular) com manteiga e polvilhe com farinha de trigo.\n2. **Misture os secos:** Em uma tigela grande, peneire a farinha de trigo, o açúcar, o chocolate em pó, o fermento, o bicarbonato (se estiver usando) e o sal. Misture bem.\n3. **Adicione os líquidos:** Em outra tigela, bata os ovos, o leite, o óleo e a essência de baunilha até ficar homogêneo.",
+    "titulo": "Dandara dos Palmares",
+    "historia": "Dandara foi uma guerreira do Quilombo dos Palmares e companheira de Zumbi. Ela liderou batalhas contra as forças coloniais e defendeu a liberdade de negros escravizados.",
     "curiosidades": [
-      "O bolo de chocolate é uma das sobremesas mais populares do mundo.",
-      "O primeiro bolo de chocolate foi criado em 1764."
+      "Dandara é considerada símbolo de força e resistência feminina.",
+      "Pouco se sabe sobre sua origem devido à falta de registros históricos detalhados."
     ]
   },
   {
     "imagePath": "assets/img/3.jpeg",
-    "titulo": "Figura 3",
-    "historia": "### Receita de Bolo de Chocolate Fofinho 🍫\n\n#### **Ingredientes**\n##### Para o bolo:\n- 2 xícaras (chá) de farinha de trigo peneirada\n- 1 xícara (chá) de açúcar\n- 1 xícara (chá) de chocolate em pó (não confundir com achocolatado)\n- 1 colher (sopa) de fermento em pó\n- 1 colher (chá) de bicarbonato de sódio (opcional, para maior maciez)\n- 1/2 colher (chá) de sal\n- 3 ovos\n- 1 xícara (chá) de leite\n- 1/2 xícara (chá) de óleo vegetal\n- 1 colher (chá) de essência de baunilha\n- 1/2 xícara (chá) de água quente\n\n##### Para a cobertura:\n- 1 lata de leite condensado\n- 1 colher (sopa) de manteiga\n- 4 colheres (sopa) de chocolate em pó\n- 1/2 caixinha de creme de leite (opcional, para deixar a cobertura mais cremosa)\n\n---\n\n#### **Modo de Preparo**\n##### Para o bolo:\n1. **Pré-aqueça o forno:** Aqueça o forno a 180°C e unte uma forma redonda média (ou retangular) com manteiga e polvilhe com farinha de trigo.\n2. **Misture os secos:** Em uma tigela grande, peneire a farinha de trigo, o açúcar, o chocolate em pó, o fermento, o bicarbonato (se estiver usando) e o sal. Misture bem.\n3. **Adicione os líquidos:** Em outra tigela, bata os ovos, o leite, o óleo e a essência de baunilha até ficar homogêneo.",
+    "titulo": "Carolina Maria de Jesus",
+    "historia": "Carolina Maria de Jesus foi uma escritora brasileira que retratou em seus livros a vida nas favelas de São Paulo. Sua obra mais conhecida é 'Quarto de Despejo'.",
     "curiosidades": [
-      "O bolo de chocolate é uma das sobremesas mais populares do mundo.",
-      "O primeiro bolo de chocolate foi criado em 1764."
+      "Seu livro foi traduzido para mais de 13 idiomas.",
+      "Ela utilizava papel que recolhia do lixo para escrever."
+    ]
+  },
+  {
+    "imagePath": "assets/img/4.jpeg",
+    "titulo": "Luiza Mahin",
+    "historia": "Luiza Mahin foi uma líder quilombola e ativista na luta contra a escravidão. Participou da Revolta dos Malês, em Salvador, no século XIX.",
+    "curiosidades": [
+      "Acredita-se que tenha origem no povo africano de língua árabe.",
+      "Sua história inspirou diversos movimentos negros no Brasil."
+    ]
+  },
+  {
+    "imagePath": "assets/img/5.jpeg",
+    "titulo": "Machado de Assis",
+    "historia": "Machado de Assis é considerado um dos maiores escritores da literatura brasileira. Ele foi o fundador da Academia Brasileira de Letras e escreveu obras como 'Dom Casmurro' e 'Memórias Póstumas de Brás Cubas'.",
+    "curiosidades": [
+      "Machado de Assis era neto de escravizados.",
+      "Ele enfrentou preconceitos raciais ao longo de sua carreira."
+    ]
+  },
+  {
+    "imagePath": "assets/img/6.jpeg",
+    "titulo": "André Rebouças",
+    "historia": "André Rebouças foi um engenheiro e abolicionista brasileiro que lutou pelo fim da escravidão. Ele projetou importantes obras de infraestrutura no Brasil.",
+    "curiosidades": [
+      "Rebouças foi mentor de Dom Pedro II em questões de engenharia.",
+      "Ele deu nome ao famoso bairro Rebouças, em Curitiba."
+    ]
+  },
+  {
+    "imagePath": "assets/img/7.jpeg",
+    "titulo": "Abdias do Nascimento",
+    "historia": "Abdias do Nascimento foi um ativista, escritor e político brasileiro. Ele fundou o Teatro Experimental do Negro, que buscava dar visibilidade a artistas negros.",
+    "curiosidades": [
+      "Recebeu indicações ao Prêmio Nobel da Paz.",
+      "Foi um dos pioneiros na luta pelos direitos civis dos negros no Brasil."
+    ]
+  },
+  {
+    "imagePath": "assets/img/8.jpeg",
+    "titulo": "Milton Santos",
+    "historia": "Milton Santos foi um geógrafo brasileiro reconhecido mundialmente. Ele desenvolveu estudos sobre globalização e desigualdades sociais.",
+    "curiosidades": [
+      "Recebeu o Prêmio Vautrin Lud, considerado o Nobel da Geografia.",
+      "Suas ideias influenciaram políticas públicas em diversos países."
+    ]
+  },
+  {
+    "imagePath": "assets/img/9.jpeg",
+    "titulo": "Tereza de Benguela",
+    "historia": "Tereza de Benguela foi líder de um quilombo no Mato Grosso durante o século XVIII. Ela organizou a comunidade e resistiu contra as forças coloniais.",
+    "curiosidades": [
+      "É conhecida como a 'Rainha do Quilombo'.",
+      "Seu dia é celebrado em 25 de julho, o Dia da Mulher Negra."
+    ]
+  },
+  {
+    "imagePath": "assets/img/10.jpeg",
+    "titulo": "João Cândido",
+    "historia": "João Cândido, conhecido como o 'Almirante Negro', liderou a Revolta da Chibata em 1910, exigindo melhores condições para os marinheiros.",
+    "curiosidades": [
+      "A Revolta da Chibata foi um marco na luta contra a opressão na Marinha.",
+      "João Cândido enfrentou perseguições após a revolta."
+    ]
+  },
+  {
+    "imagePath": "assets/img/11.jpeg",
+    "titulo": "Elza Soares",
+    "historia": "Elza Soares foi uma das maiores cantoras brasileiras, conhecida por sua voz marcante e por sua luta contra o racismo e o machismo na música.",
+    "curiosidades": [
+      "Foi eleita 'Cantora do Milênio' pela BBC.",
+      "Superou inúmeros desafios pessoais para se tornar um ícone musical."
+    ]
+  },
+  {
+    "imagePath": "assets/img/12.jpeg",
+    "titulo": "Benedita da Silva",
+    "historia": "Benedita da Silva é uma política brasileira que lutou por igualdade social e racial. Foi a primeira senadora negra do Brasil.",
+    "curiosidades": [
+      "Também foi governadora do Rio de Janeiro.",
+      "Defendeu políticas públicas voltadas para a população negra."
+    ]
+  },
+  {
+    "imagePath": "assets/img/13.jpeg",
+    "titulo": "Aleijadinho",
+    "historia": "Antônio Francisco Lisboa, o Aleijadinho, foi um escultor e arquiteto negro que deixou um legado artístico no período colonial brasileiro.",
+    "curiosidades": [
+      "Suas obras mais famosas estão em Minas Gerais.",
+      "Trabalhou mesmo após desenvolver uma grave doença."
+    ]
+  },
+  {
+    "imagePath": "assets/img/14.jpeg",
+    "titulo": "Lélia Gonzalez",
+    "historia": "Lélia Gonzalez foi uma antropóloga e ativista brasileira que destacou a importância da cultura afro-brasileira e lutou pelos direitos das mulheres negras.",
+    "curiosidades": [
+      "É considerada uma das precursoras do feminismo negro no Brasil.",
+      "Foi cofundadora do Movimento Negro Unificado."
     ]
   }
 ]
